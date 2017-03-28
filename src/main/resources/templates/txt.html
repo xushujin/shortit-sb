@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title>文本信息</title>
+    <link href="/assets/css/prettify.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript" src="/assets/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="/assets/js/prettify.js"></script>
+    <script type="text/javascript" src="/assets/js/lang-sql.js"></script>
+    <script type="text/javascript" src="/assets/js/lang-go.js"></script>
+    <script type="text/javascript" src="/assets/js/lang-css.js"></script>
+</head>
+<body onload="prettyPrint()">
+<div>
+    <hr/>
+    <pre id="content" class="prettyprint" th:text="${text_content}">
+        public static TranType getTranType(int code){
+		TranType[] tranTypes = TranType.values();
+		for(TranType tranType : tranTypes){
+			if(tranType.getCode() == code){
+				return tranType;
+			}
+		}
+		return null;
+	}
+
+    </pre>
+    <hr/>
+</div>
+</body>
+</html>
